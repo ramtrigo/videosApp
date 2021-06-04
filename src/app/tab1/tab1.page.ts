@@ -1,6 +1,8 @@
+import { IFilme } from '../models/IFilme.models';
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
+import { noop } from 'rxjs';
 
 @Component({
   selector: 'app-tab1',
@@ -8,6 +10,27 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+
+  titulo ='Videos App';
+
+  listaVideos: IFilme[] = [
+     {
+       nome: 'Mortal Kombat(2021)',
+       lancamento: '15/04/2021',
+       duracao: '1h 50m',
+       classificacao: 76,
+       cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/w8BVC3qrCWCiTHRz4Rft12dtQF0.jpg',
+       generos: ['Ação', 'Fantasia', 'Aventura']
+     },
+     {
+      nome: 'Liga da Justiça de Zack Snyder (2021)',
+      lancamento: '18/03/2021',
+      duracao: '4h 2m',
+      classificacao: 85,
+      cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/ArWn6gCi61b3b3hclD2L0LOk66k.jpg',
+      generos: ['Ação', 'Aventura', 'Fantasia', 'Ficção científica']
+     }
+    ];
 
   constructor(public alertController: AlertController,public toastController: ToastController) {}
 
